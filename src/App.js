@@ -1,7 +1,16 @@
-function App() {
-  return (
-    <div>App</div>
-  );
-}
+import { Provider } from 'react-redux';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { withStore } from 'hoc';
 
-export default App;
+const App = ({ store }) => {
+	return (
+		<Provider store={store}>
+			<Router>
+				<div>App</div>
+			</Router>
+		</Provider>
+	);
+};
+
+export default withStore(App);
